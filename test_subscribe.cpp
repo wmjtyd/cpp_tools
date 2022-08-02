@@ -18,7 +18,7 @@ public:
 
     void run(){
         using namespace zmq_pub_sub;
-        Subscribe sub =  Subscribe("tcp://127.0.0.1:5556");
+        Subscribe sub =  Subscribe("ipc:///tmp/pubsub1.ipc");
 
         using MyFunction = std::function<void(const std::string&)>;
         MyFunction fun = std::bind(&Test::eventCallbackHandler, this, std::placeholders::_1);

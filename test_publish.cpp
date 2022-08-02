@@ -13,7 +13,7 @@ public:
 
     void run(){
         using namespace zmq_pub_sub;
-        Publish pub =  Publish("tcp://127.0.0.1:5556");
+        Publish pub =  Publish("ipc:///tmp/pubsub1.ipc");
         int ret = pub.connect();
         if (ret ==0){
             for(int i=0;i<count_; ++i){
