@@ -13,6 +13,8 @@
 #include <chrono>
 #include <thread>
 #include <functional>
+#include <assert.h>
+
 #ifdef _WIN32
 #include <Windows.h>
 #else
