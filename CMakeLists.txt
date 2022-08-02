@@ -12,8 +12,8 @@ find_package(PkgConfig)
 find_package(ZeroMQ REQUIRED)
 #find_package(OpenSSL REQUIRED)
 link_libraries(libzmq.a libsodium.a)
-#add_executable(${NAME}  test_subscribe.cpp zmq_publish.h zmq_subscribe.h )
-add_executable(${NAME}  test_publish.cpp zmq_publish.h zmq_subscribe.h )
-TARGET_LINK_LIBRARIES(${NAME} dl pthread)
-
+add_executable(${NAME}_subscribe  test_subscribe.cpp zmq_publish.h zmq_subscribe.h )
+add_executable(${NAME}_publish  test_publish.cpp zmq_publish.h zmq_subscribe.h )
+TARGET_LINK_LIBRARIES(${NAME}_subscribe dl pthread)
+TARGET_LINK_LIBRARIES(${NAME}_publish dl pthread)
 #
